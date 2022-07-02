@@ -1,5 +1,5 @@
 {
-    "name": "real-debrid-nodejs-client",
+    "name": "realdebrid-nodejs-client",
     "version": "0.1.1",
     "description": "Real Debrid API Client",
     "main": "index.js",
