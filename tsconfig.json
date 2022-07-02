@@ -1,0 +1,10 @@
+{
+    "extends": "@tsconfig/node16/tsconfig.json",
+    "files": ["index.ts", "methods.ts", "base.ts"],
+    "compilerOptions": {
+        "sourceMap": true,
+        "declaration": true,
+        "outDir": "dist",
+        "moduleResolution": "Node"
+    }
+}

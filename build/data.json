@@ -1,0 +1,971 @@
+{
+  "disable_access_token": {
+    "verb": "GET",
+    "endpoint": "/disable_access_token",
+    "response": {
+      "body": {}
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "time": {
+    "verb": "GET",
+    "endpoint": "/time",
+    "response": {
+      "body": "Y-m-d H:i:s"
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "timeIso": {
+    "verb": "GET",
+    "endpoint": "/time/iso",
+    "response": {
+      "body": "Y-m-dTH:i:sO"
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "user": {
+    "verb": "GET",
+    "endpoint": "/user",
+    "response": {
+      "body": {
+        "id": 0,
+        "username": "string",
+        "email": "string",
+        "points": 0,
+        "locale": "string",
+        "avatar": "string",
+        "type": "string",
+        "premium": 0,
+        "expiration": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "unrestrictCheck": {
+    "verb": "POST",
+    "endpoint": "/unrestrict/check",
+    "response": {
+      "body": {
+        "host": "string",
+        "link": "string",
+        "filename": "string",
+        "filesize": 0,
+        "supported": 0
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "link": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        },
+        "password": {
+          "required": false,
+          "values": [],
+          "type": "string"
+        }
+      }
+    }
+  },
+  "unrestrictLink": {
+    "verb": "POST",
+    "endpoint": "/unrestrict/link",
+    "response": {
+      "body": {
+        "id": "string",
+        "filename": "string",
+        "mimeType": "string",
+        "filesize": 0,
+        "link": "string",
+        "host": "string",
+        "chunks": 0,
+        "crc": 0,
+        "download": "string",
+        "streamable": 0
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "link": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        },
+        "password": {
+          "required": false,
+          "values": [],
+          "type": "string"
+        },
+        "remote": {
+          "required": false,
+          "values": [],
+          "type": "number"
+        }
+      }
+    }
+  },
+  "unrestrictFolder": {
+    "verb": "POST",
+    "endpoint": "/unrestrict/folder",
+    "response": {
+      "body": [
+        "string",
+        "string",
+        "string"
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "link": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        }
+      }
+    }
+  },
+  "unrestrictContainerFile": {
+    "verb": "PUT",
+    "endpoint": "/unrestrict/containerFile",
+    "response": {
+      "body": [
+        "string",
+        "string",
+        "string"
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "unrestrictContainerLink": {
+    "verb": "POST",
+    "endpoint": "/unrestrict/containerLink",
+    "response": {
+      "body": [
+        "string",
+        "string",
+        "string"
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "link": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        }
+      }
+    }
+  },
+  "traffic": {
+    "verb": "GET",
+    "endpoint": "/traffic",
+    "response": {
+      "body": {
+        "string": {
+          "left": 0,
+          "bytes": 0,
+          "links": 0,
+          "limit": 0,
+          "type": "string",
+          "extra": 0,
+          "reset": "string"
+        }
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "trafficDetails": {
+    "verb": "GET",
+    "endpoint": "/traffic/details",
+    "response": {
+      "body": {}
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    },
+    "parameters": {
+      "start": {
+        "required": false,
+        "values": [],
+        "type": "Date"
+      },
+      "end": {
+        "required": false,
+        "values": [],
+        "type": "Date"
+      }
+    }
+  },
+  "streamingTranscode": {
+    "verb": "GET",
+    "endpoint": "/streaming/transcode/{id}",
+    "response": {
+      "body": {
+        "apple": {
+          "quality": "string"
+        },
+        "dash": {
+          "quality": "string"
+        },
+        "liveMP4": {
+          "quality": "string"
+        },
+        "h264WebM": {
+          "quality": "string"
+        }
+      }
+    },
+    "parameters": {
+      "id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "streamingMediaInfos": {
+    "verb": "GET",
+    "endpoint": "/streaming/mediaInfos/{id}",
+    "response": {
+      "body": {}
+    },
+    "parameters": {
+      "id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "downloads": {
+    "verb": "GET",
+    "endpoint": "/downloads",
+    "response": {
+      "body": [
+        {
+          "id": "string",
+          "filename": "string",
+          "mimeType": "string",
+          "filesize": 0,
+          "link": "string",
+          "host": "string",
+          "chunks": 0,
+          "download": "string",
+          "generated": "string"
+        },
+        {
+          "id": "string",
+          "filename": "string",
+          "mimeType": "string",
+          "filesize": 0,
+          "link": "string",
+          "host": "string",
+          "chunks": 0,
+          "download": "string",
+          "generated": "string",
+          "type": "string"
+        }
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    },
+    "parameters": {
+      "offset": {
+        "required": false,
+        "values": [],
+        "type": "number"
+      },
+      "page": {
+        "required": false,
+        "values": [],
+        "type": "number"
+      },
+      "limit": {
+        "required": false,
+        "values": [],
+        "type": "number"
+      }
+    }
+  },
+  "downloadsDelete": {
+    "verb": "DELETE",
+    "endpoint": "/downloads/delete/{id}",
+    "response": {
+      "body": {}
+    },
+    "parameters": {
+      "id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "torrents": {
+    "verb": "GET",
+    "endpoint": "/torrents",
+    "response": {
+      "body": [
+        {
+          "id": "string",
+          "filename": "string",
+          "hash": "string",
+          "bytes": 0,
+          "host": "string",
+          "split": 0,
+          "progress": 0,
+          "status": "downloaded",
+          "added": "string",
+          "links": [
+            "string"
+          ],
+          "ended": "string",
+          "speed": 0,
+          "seeders": 0
+        },
+        {
+          "id": "string",
+          "filename": "string",
+          "hash": "string",
+          "bytes": 0,
+          "host": "string",
+          "split": 0,
+          "progress": 0,
+          "status": "downloaded",
+          "added": "string",
+          "links": [
+            "string",
+            "string"
+          ],
+          "ended": "string"
+        }
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    },
+    "parameters": {
+      "offset": {
+        "required": false,
+        "values": [],
+        "type": "number"
+      },
+      "page": {
+        "required": false,
+        "values": [],
+        "type": "number"
+      },
+      "limit": {
+        "required": false,
+        "values": [],
+        "type": "number"
+      },
+      "filter": {
+        "required": false,
+        "values": [],
+        "type": "string"
+      }
+    }
+  },
+  "torrentsInfo": {
+    "verb": "GET",
+    "endpoint": "/torrents/info/{id}",
+    "response": {
+      "body": [
+        {
+          "id": "string",
+          "filename": "string",
+          "original_filename": "string",
+          "hash": "string",
+          "bytes": 0,
+          "original_bytes": 0,
+          "host": "string",
+          "split": 0,
+          "progress": 0,
+          "status": "downloaded",
+          "added": "string",
+          "files": [
+            {
+              "id": 0,
+              "path": "string",
+              "bytes": 0,
+              "selected": 0
+            },
+            {
+              "id": 0,
+              "path": "string",
+              "bytes": 0,
+              "selected": 0
+            }
+          ],
+          "links": [
+            "string"
+          ],
+          "ended": "string",
+          "speed": 0,
+          "seeders": 0
+        }
+      ]
+    },
+    "parameters": {
+      "id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "torrentsInstantAvailability": {
+    "verb": "GET",
+    "endpoint": "/torrents/instantAvailability/{hash}",
+    "response": {
+      "body": {
+        "string": {
+          "string": [
+            {
+              "int": {
+                "filename": "string",
+                "filesize": 0
+              }
+            },
+            {
+              "int": {
+                "filename": "string",
+                "filesize": 0
+              }
+            }
+          ]
+        }
+      }
+    },
+    "parameters": {
+      "hash": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "torrentsActiveCount": {
+    "verb": "GET",
+    "endpoint": "/torrents/activeCount",
+    "response": {
+      "body": {
+        "nb": 0,
+        "limit": 0
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "torrentsAvailableHosts": {
+    "verb": "GET",
+    "endpoint": "/torrents/availableHosts",
+    "response": {
+      "body": [
+        {
+          "host": "string",
+          "max_file_size": 0
+        },
+        {
+          "host": "string",
+          "max_file_size": 0
+        }
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "torrentsAddTorrent": {
+    "verb": "PUT",
+    "endpoint": "/torrents/addTorrent",
+    "response": {
+      "body": {
+        "id": "string",
+        "uri": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "host": {
+          "required": false,
+          "values": [],
+          "type": "string"
+        }
+      }
+    }
+  },
+  "torrentsAddMagnet": {
+    "verb": "POST",
+    "endpoint": "/torrents/addMagnet",
+    "response": {
+      "body": {
+        "id": "string",
+        "uri": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "magnet": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        },
+        "host": {
+          "required": false,
+          "values": [],
+          "type": "string"
+        }
+      }
+    }
+  },
+  "torrentsSelectFiles": {
+    "verb": "POST",
+    "endpoint": "/torrents/selectFiles/{id}",
+    "response": {
+      "body": {}
+    },
+    "parameters": {
+      "id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "files": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        }
+      }
+    }
+  },
+  "torrentsDelete": {
+    "verb": "DELETE",
+    "endpoint": "/torrents/delete/{id}",
+    "response": {
+      "body": {}
+    },
+    "parameters": {
+      "id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "hosts": {
+    "verb": "GET",
+    "endpoint": "/hosts",
+    "response": {
+      "body": {
+        "string": {
+          "id": "string",
+          "name": "string",
+          "image": "string"
+        }
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "hostsStatus": {
+    "verb": "GET",
+    "endpoint": "/hosts/status",
+    "response": {
+      "body": {
+        "string": {
+          "id": "string",
+          "name": "string",
+          "image": "string",
+          "supported": 0,
+          "status": "string",
+          "check_time": "string",
+          "competitors_status": {
+            "string": {
+              "status": "string",
+              "check_time": "string"
+            }
+          }
+        }
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "hostsRegex": {
+    "verb": "GET",
+    "endpoint": "/hosts/regex",
+    "response": {
+      "body": [
+        "string",
+        "string",
+        "string"
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "hostsRegexFolder": {
+    "verb": "GET",
+    "endpoint": "/hosts/regexFolder",
+    "response": {
+      "body": [
+        "string",
+        "string",
+        "string"
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "hostsDomains": {
+    "verb": "GET",
+    "endpoint": "/hosts/domains",
+    "response": {
+      "body": [
+        "string",
+        "string",
+        "string"
+      ]
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "settings": {
+    "verb": "GET",
+    "endpoint": "/settings",
+    "response": {
+      "body": {
+        "download_ports": [
+          "string",
+          "string"
+        ],
+        "download_port": "string",
+        "locales": {
+          "string": "string"
+        },
+        "locale": "string",
+        "streaming_qualities": [
+          "string",
+          "string",
+          "string",
+          "string"
+        ],
+        "streaming_quality": "string",
+        "mobile_streaming_quality": "string",
+        "streaming_languages": {
+          "string": "string"
+        },
+        "streaming_language_preference": "string",
+        "streaming_cast_audio": [
+          "string",
+          "string"
+        ],
+        "streaming_cast_audio_preference": "string"
+      }
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "settingsUpdate": {
+    "verb": "POST",
+    "endpoint": "/settings/update",
+    "response": {
+      "body": {}
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      },
+      "body": {
+        "setting_name": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        },
+        "setting_value": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        }
+      }
+    }
+  },
+  "settingsConvertPoints": {
+    "verb": "POST",
+    "endpoint": "/settings/convertPoints",
+    "response": {
+      "body": {}
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "settingsChangePassword": {
+    "verb": "POST",
+    "endpoint": "/settings/changePassword",
+    "response": {
+      "body": {}
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "settingsAvatarFile": {
+    "verb": "PUT",
+    "endpoint": "/settings/avatarFile",
+    "response": {
+      "body": {}
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "settingsAvatarDelete": {
+    "verb": "DELETE",
+    "endpoint": "/settings/avatarDelete",
+    "response": {
+      "body": {}
+    },
+    "request": {
+      "headers": {
+        "Authorization": "Bearer [access_token]"
+      }
+    }
+  },
+  "deviceCode": {
+    "verb": "GET",
+    "baseUrl": "https://api.real-debrid.com",
+    "endpoint": "/oauth/v2/device/code",
+    "parameters": {
+      "client_id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      },
+      "new_credentials": {
+        "required": true,
+        "values": [
+          "yes"
+        ],
+        "type": "string"
+      }
+    },
+    "request": {
+      "body": {}
+    },
+    "oauth": false,
+    "pagination": false,
+    "extended": false,
+    "filters": false,
+    "emojis": false,
+    "response": {
+      "body": {
+        "device_code": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        "user_code": "ABCDEF0123456",
+        "interval": 5,
+        "expires_in": 1800,
+        "verification_url": "https://real-debrid.com/device",
+        "direct_verification_url": ""
+      }
+    }
+  },
+  "deviceCredentials": {
+    "verb": "GET",
+    "baseUrl": "https://api.real-debrid.com",
+    "endpoint": "/oauth/v2/device/credentials",
+    "parameters": {
+      "client_id": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      },
+      "code": {
+        "required": true,
+        "values": [],
+        "type": "string"
+      }
+    },
+    "request": {
+      "body": {}
+    },
+    "oauth": false,
+    "pagination": false,
+    "extended": false,
+    "filters": false,
+    "emojis": false,
+    "response": {
+      "body": {
+        "client_id": "",
+        "client_secret": ""
+      }
+    }
+  },
+  "token": {
+    "verb": "POST",
+    "baseUrl": "https://api.real-debrid.com",
+    "endpoint": "/oauth/v2/token",
+    "request": {
+      "body": {
+        "client_id": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        },
+        "client_secret": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        },
+        "code": {
+          "required": true,
+          "values": [],
+          "type": "string"
+        },
+        "redirect_uri": {
+          "required": false,
+          "values": [],
+          "type": "string"
+        },
+        "grant_type": {
+          "required": true,
+          "values": [
+            "authorization_code",
+            "http://oauth.net/grant_type/device/1.0"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "oauth": false,
+    "pagination": false,
+    "extended": false,
+    "filters": false,
+    "emojis": false,
+    "response": {
+      "body": {
+        "access_token": "token",
+        "expires_in": 0,
+        "token_type": "Bearer",
+        "refresh_token": "token",
+        "created_at": 0
+      }
+    }
+  }
+}
